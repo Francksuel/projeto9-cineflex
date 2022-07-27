@@ -1,12 +1,15 @@
 import './style.css';
 
-export default function MovieSelection ({movies}){
-    console.log(movies);
+export default function MovieSelection({ movies }) {
     return (
-        <>Selecione o filme
-        <div className='movies'>
-        {movies.map((movie)=><div className='movie' ><img src={movie.posterURL} alt={movie.title} /></div>)}
-        </div>
-        </>        
+        <>
+            <h2>Selecione o filme</h2>
+            <div className='movies'>
+                {movies.map((movie) =>
+                    <div className='movie' onClick={() => alert(movie.id)} >
+                        <img src={movie.posterURL} alt={movie.title} />
+                    </div>)}
+            </div>
+        </>
     )
 }
