@@ -1,0 +1,29 @@
+.sessions {
+    width: 88%;
+    margin-top: 20px;
+    margin-bottom: 140px;
+}
+
+.session {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sessions h3 {
+    font-size: 20px;
+    margin: 23px 0px;
+    color: #293845;
+}
+
+.showtime {
+    width: 83px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8833A;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
