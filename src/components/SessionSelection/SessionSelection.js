@@ -1,19 +1,20 @@
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../Footer/Footer';
 import styled from 'styled-components';
+import Footer from '../Footer/Footer';
 
 export default function SessionSelection({ URL }) {
     const { idMovie } = useParams();
     const [sessions, setSessions] = useState();
+
     useEffect(() => {
         const promise = axios.get(`${URL}movies/${idMovie}/showtimes`);
         promise.then((res) => {
             setSessions(res.data);
         })
-    }, []);
+    }, [idMovie, URL]);
 
     return (
         <>
@@ -22,24 +23,23 @@ export default function SessionSelection({ URL }) {
                 <>
                     <Sessions>
                         {sessions.days.map((session) =>
-                            <>
+                            <React.Fragment key={session.id}>
                                 <h3>{session.weekday} - {session.date}</h3>
-                                <Session key={session.id} >
+                                <Session >
                                     {session.showtimes.map((showtime) =>
                                         <Link to={`/session/${showtime.id}`} key={showtime.id}>
                                             <div><p>{showtime.name}</p></div>
                                         </Link>
                                     )}
                                 </Session>
-                            </>
+                            </React.Fragment>
                         )}
                     </Sessions>
                     <Footer title={sessions.title} posterURL={sessions.posterURL} />
                 </>
                 :
-                <p>Carregando</p>
+                <p>Carregando sessões...</p>
             }
-
         </>
     )
 }

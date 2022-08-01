@@ -16,7 +16,7 @@ export default function SeatsSelection({ URL }) {
         promise.then((res) => {
             setSeats(res.data);
         })
-    }, []);
+    }, [URL,idSession]);
 
     return (
         <>
@@ -35,7 +35,7 @@ export default function SeatsSelection({ URL }) {
                     <Footer title={seats.movie.title} posterURL={seats.movie.posterURL} day={seats.day.weekday} hour={seats.name} />
                 </>
                 :
-                <p>Carregando</p>
+                <p>Carregando assentos...</p>
             }
         </>
     )

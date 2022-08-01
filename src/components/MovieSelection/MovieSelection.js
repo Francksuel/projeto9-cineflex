@@ -11,7 +11,7 @@ export default function MovieSelection({ URL }) {
         promise.then((response) => {
             setMovies(response.data)
         })
-    }, []);
+    }, [URL]);
 
     return (
         <>
@@ -25,7 +25,7 @@ export default function MovieSelection({ URL }) {
                     </Link>)}
                 </Movies>
                 :
-                <p>Carregando</p>
+                <p>Carregando filmes...</p>
             }
         </>
     )

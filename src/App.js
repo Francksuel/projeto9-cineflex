@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import styled from "styled-components";
 import './reset.css';
+import styled from "styled-components";
 import MovieSelection from "./components/MovieSelection/MovieSelection";
 import SessionSelection from "./components/SessionSelection/SessionSelection";
 import SeatsSelection from "./components/SeatsSelection/SeatsSelection";

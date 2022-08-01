@@ -14,31 +14,35 @@ export default function Form({ idsSelected, URL, seats }) {
         if (cpf.length !== 11) {
             alert("No CPF, digite apenas os 11 números");
         } else {
-            let assentos = idsSelected.map((x) => x % 50);
-            const dataClient = {
-                ids: idsSelected,
-                name,
-                cpf,
-                hour: seats.name,
-                date: seats.day.date,
-                movie: seats.movie.title,
-                assentos,
+            if (idsSelected.length === 0) {
+                alert("Selecione um assento, no mínimo!")
+            } else {
+                let assentos = idsSelected.map((x) => x % 50);
+                const dataClient = {
+                    ids: idsSelected,
+                    name,
+                    cpf,
+                    hour: seats.name,
+                    date: seats.day.date,
+                    movie: seats.movie.title,
+                    assentos,
+                }
+                const request = axios.post(`${URL}seats/book-many`, {
+                    ids: idsSelected,
+                    name,
+                    cpf
+                });
+                request.then(() =>
+                    navigate("/success", { state: dataClient })
+                )
             }
-            const request = axios.post(`${URL}seats/book-many`, {
-                ids: idsSelected,
-                name,
-                cpf
-            });
-            request.then(() =>
-                navigate("/success", { state: dataClient })
-            )
         }
     }
 
     return (
         <Forms onSubmit={sendForm}>
             <p>Nome do comprador:</p>
-            <input type="name" value={name} required onChange={e => setName(e.target.value)} />
+            <input type="text" value={name} required onChange={e => setName(e.target.value)} />
             <p>CPF do comprador:</p>
             <input type="number" value={cpf} required onChange={e => setCpf(e.target.value)} />
             <div>

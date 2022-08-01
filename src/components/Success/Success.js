@@ -5,13 +5,12 @@ import Button from "../Common/Button";
 export default function Success() {
     const location = useLocation();
     const navigate = useNavigate();
-
-    function backToHome() {
-        navigate("/")
-    }
-
     let aux = location.state.cpf;
     let cpf = aux.substr(0, 3) + "." + aux.substr(3, 3) + "." + aux.substr(6, 3) + "-" + aux.substr(9, 2);
+    
+    function backToHome() {
+        navigate("/")
+    }   
 
     return (
         <>
@@ -30,6 +29,7 @@ export default function Success() {
         </>
     )
 }
+
 const SuccessDiv = styled.div`
     display: flex;
     width: 87.5vw;
