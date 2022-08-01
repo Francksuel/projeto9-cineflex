@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import './reset.css';
-import MovieSelection from "./MovieSelection";
-import SessionSelection from "./SessionSelection";
-import SeatsSelection from "./SeatsSelection";
+import MovieSelection from "./components/MovieSelection/MovieSelection";
+import SessionSelection from "./components/SessionSelection/SessionSelection";
+import SeatsSelection from "./components/SeatsSelection/SeatsSelection";
+import Success from "./components/Success/Success";
 
 export default function App() {
     const URL = 'https://mock-api.driven.com.br/api/v7/cineflex/';
@@ -17,6 +18,7 @@ export default function App() {
                         <Route path="/" element={<MovieSelection URL={URL} />} />
                         <Route path='/movie/:idMovie' element={<SessionSelection URL={URL} />} />
                         <Route path='/session/:idSession' element={<SeatsSelection URL={URL} />} />
+                        <Route path='/success' element={<Success URL={URL} />} />
                     </Routes>
                 </Page>
             </BrowserRouter>
@@ -35,12 +37,17 @@ const Header = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
 `
 const Page = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
+    margin-top: 67px;
+    margin-bottom: 147px;
     h2 {
         margin-top: 43px;
         font-size: 24px;

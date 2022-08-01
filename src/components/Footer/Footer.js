@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Footer({ title, posterURL, hour, day }) {   
+export default function Footer({ title, posterURL, hour, day }) {
     return (
         <FooterDiv>
             <MovieSelected>

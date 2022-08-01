@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
+import Footer from '../Footer/Footer';
 import styled from 'styled-components';
 
 export default function SessionSelection({ URL }) {
@@ -14,6 +14,7 @@ export default function SessionSelection({ URL }) {
             setSessions(res.data);
         })
     }, []);
+    
     return (
         <>
             <h2>Selecione o horário</h2>
@@ -44,8 +45,7 @@ export default function SessionSelection({ URL }) {
 }
 const Sessions = styled.div`
     width: 88%;
-    margin-top: 20px;
-    margin-bottom: 140px;
+    margin-top: 20px;   
     h3 {
         font-size: 20px;
         margin: 23px 0px;
