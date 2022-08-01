@@ -10,8 +10,8 @@ export default function Success() {
         navigate("/")
     }
 
-let aux = location.state.cpf;
-let cpf = aux.substr(0,3)+"."+aux.substr(3,3)+"."+aux.substr(6,3)+"-"+aux.substr(9,2);
+    let aux = location.state.cpf;
+    let cpf = aux.substr(0, 3) + "." + aux.substr(3, 3) + "." + aux.substr(6, 3) + "-" + aux.substr(9, 2);
 
     return (
         <>

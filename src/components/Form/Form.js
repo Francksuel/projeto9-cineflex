@@ -8,7 +8,7 @@ export default function Form({ idsSelected, URL, seats }) {
     const [name, setName] = useState("");
     const [cpf, setCpf] = useState("");
     const navigate = useNavigate()
-      
+
     function sendForm(event) {
         event.preventDefault();
         if (cpf.length !== 11) {

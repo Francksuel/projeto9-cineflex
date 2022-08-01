@@ -12,6 +12,7 @@ export default function Footer({ title, posterURL, hour, day }) {
         </FooterDiv>
     )
 }
+
 const FooterDiv = styled.div`
     height: 117px;
     width: 100%;

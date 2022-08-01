@@ -31,7 +31,7 @@ export default function SeatsSelection({ URL }) {
                         <Status><Caption captionColor={"#C3CFD9"} /><p>Disponível</p></Status>
                         <Status><Caption captionColor={"#FBE192"} /><p>Indisponível</p></Status>
                     </Label>
-                    <Form idsSelected={idsSelected} URL={URL} seats={seats}/>
+                    <Form idsSelected={idsSelected} URL={URL} seats={seats} />
                     <Footer title={seats.movie.title} posterURL={seats.movie.posterURL} day={seats.day.weekday} hour={seats.name} />
                 </>
                 :
@@ -42,7 +42,7 @@ export default function SeatsSelection({ URL }) {
 }
 
 const Seats = styled.div`
-    width: 90vw;
+    width: 90vw;  
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;      

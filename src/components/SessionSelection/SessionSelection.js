@@ -14,7 +14,7 @@ export default function SessionSelection({ URL }) {
             setSessions(res.data);
         })
     }, []);
-    
+
     return (
         <>
             <h2>Selecione o horário</h2>

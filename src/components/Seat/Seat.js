@@ -16,11 +16,14 @@ export default function Seat({ seat, idsSelected, setIdsSelected }) {
                 let newArray = [...idsSelected, seat.id]
                 setIdsSelected(newArray);
             }
+        } else {
+            alert("Esse assento não está disponível!");
         }
     }
     return (
         <>
-            {seat ? <SeatDiv seatColor={seatColor} isAva={seat.isAvailable} key={seat.id} onClick={() => { selectSeat(seat) }} >
+            {seat ? <SeatDiv seatColor={seatColor} isAva={seat.isAvailable} key={seat.id}
+                onClick={() => { selectSeat(seat) }} >
                 <p>{seat.name}</p>
             </SeatDiv> : ""}
         </>
@@ -40,4 +43,5 @@ const SeatDiv = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 2.93vw;
+    cursor: pointer;
 `

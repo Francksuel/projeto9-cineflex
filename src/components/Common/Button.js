@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 const Button = styled.button`
     width: 60vw;
     height: 42px;
@@ -8,5 +9,7 @@ const Button = styled.button`
     border: none;
     font-size: 18px;
     margin-top: 50px;
+    cursor: pointer;
 `
+
 export default Button;
